@@ -65,5 +65,5 @@ Thank you for visiting my project! If you have any feedback, suggestions, or wou
 
 📧 **Email:** krishna.ag2503@gmail.com
 
-💼 **LinkedIn:**linkedin.com/in/krishna-agarwal-035945417
+💼 **LinkedIn:** https://www.linkedin.com/in/krishna-agarwal-035945417
 
