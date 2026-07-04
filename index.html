@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <!--  HINT : Main tag to hold important info  -->
+    <meta="UTF-8" /> <!--  HINT : SEO Improvement Tags  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--  HINT : SEO Improvement Tags  -->
+    <title>Krishna Agarwal| Full Stack Developer Game</title> <!--  HINT : Tab Headinh  -->
+    <link rel="stylesheet" href="final_style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Courier+Prime:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body> <!--  HINT : This tag contains the main Webpage Content  -->
+
+    <div id="game-cursor"></div>
+    <div id="flash"></div>
+    <canvas id="ink-particles"></canvas>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- HUD -->
+    <section id="game-hud"> <!--  HINT : Sectioning tag for containers  -->
+        <div class="hud-box">ARCHIVES UNLOCKED: <span id="score">0</span>/3</div>
+        <!--  HINT : Sectioning tag (horizontal alignment) for containers  -->
+        <div class="hud-box blink" id="mission-text">MISSION: UNLOCK DOOR 1</div>
+    </section>
+
+    <!-- START SCREEN -->
+    <div id="front-gate">
+        <h1>Krishna Agarwal</h1> <!--  HINT : Biggest Heading  -->
+        <p>Learning. Building. Growing.<br>Every door holds a new achievement.<br>
+            Unlock them to explore my skills, projects, and learning journey.</p>
+        <button class="btn-start interactable" id="btn-enter">START GAME</button> <!--  HINT : Clickable Element  -->
+    </div>
+
+    <!-- 3D ROOM -->
+    <div id="scene">
+        <div id="room">
+            <div class="wall floor"></div>
+
+            <!-- Left Wall (Door 1 - Unlocked initially) -->
+            <section class="wall wall-left"> <!--  HINT : Sectioning tag for containers  -->
+                <h2 class="wall-title">Archive 01</h2> <!--  HINT : Sub-Main heading Tag  -->
+                <div class="door-frame unlocked interactable" data-id="1" data-target="content-about">
+                    <div class="room-door">
+                        <h3>About Me</h3> <!--  HINT : Sub-Main heading Tag  -->
+                        <div class="status-icon">[ UNLOCKED ]</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Back Wall (Door 2 - Locked) -->
+            <div class="wall wall-back">
+                <h2 class="wall-title">Archive 02</h2>
+                <div class="door-frame locked interactable" data-id="2" data-target="content-projects">
+                    <div class="room-door">
+                        <h3>Projects</h3> <!--  HINT : Sub-Main heading Tag  -->
+                        <div class="status-icon">[ LOCKED ]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Wall (Door 3 - Locked) -->
+            <div class="wall wall-right">
+                <h2 class="wall-title">Archive 03</h2> <!--  HINT : Sub-Main heading Tag  -->
+                <div class="door-frame locked interactable" data-id="3" data-target="content-contact">
+                    <div class="room-door">
+                        <h3>Contact</h3> <!--  HINT : Sub-Main heading Tag  -->
+                        <div class="status-icon">[ LOCKED ]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <div class="modal-overlay" id="overlay">
+
+        <!-- PUZZLE TERMINAL -->
+        <div class="puzzle-content" id="puzzle-modal">
+            <button class="cancel-btn interactable">&times; ABORT</button> <!--  HINT : Clickable Element  -->
+            <h2>SECURITY OVERRIDE</h2>
+            <!-- Using innerHTML in JS to render the question so HTML tags like <br> and <code> work perfectly -->
+            <p id="puzzle-question">Question goes here...</p>
+            <input type="text" class="puzzle-input interactable" id="puzzle-input" placeholder="enter answer..."
+                autocomplete="off"> <!--  HINT : Element to take values from user  -->
+            <br>
+            <button class="btn-submit interactable" id="btn-submit-puzzle">DECRYPT</button>
+        </div>
+
+        <!-- CONTENT 1: ABOUT -->
+        <div class="modal-content" id="content-about">
+            <button class="close-btn interactable">&times; CLOSE TAB</button>
+            <h2>The Developer</h2>
+            <p>Welcome. I am <strong>Krishna Agarwal</strong>,I am passionate about web development
+                and enjoy learning how websites and web applications are built.</p>
+            <h3>Core Technical Arsenal</h3>
+            <ul> <!--  HINT : Element that displays items in queue  -->
+                <li><strong>Skilling On</strong> HTML, CSS, JavaScript.</li>
+                <li><strong>Programming</strong> C++ & Python (Basic).</li>
+                <li><strong>Tools</strong> Git, GitHub, VS Code.</li>
+            </ul>
+        </div>
+
+        <!-- CONTENT 2: PROJECTS -->
+        <section class="modal-content" id="content-projects"> <!--  HINT : Sectioning tag for containers  -->
+            <button class="close-btn interactable">&times; CLOSE TAB</button>
+            <h2>Project Gallery</h2>
+            <h3>Movie page</h3>
+            <p>Level 1: Designed and developed a basic Movie Page using HTML and CSS. The project features an attractive
+                layout
+                with movie posters, titles, short descriptions, and a clean interface. It helped me
+                strengthen my understanding of HTML structure, CSS styling, and responsive web design fundamentals.</p>
+
+            <h3>Level 2: Personal Portfolio Website</h3>
+            <p>Designed and developed a responsive personal portfolio website using HTML, CSS, and JavaScript. The
+                website showcases my profile, skills, projects, and contact information
+            </p>
+            <!--  HINT : Content is added in this Tag  -->
+        </section>
+
+        <!-- CONTENT 3: CONTACT -->
+        <div class="modal-content" id="content-contact">
+            <button class="close-btn interactable">&times; CLOSE TAB</button>
+            <h2>Communications Hub</h2>
+            <p>
+                As a fresher, I am excited to learn, take on new challenges, and contribute to meaningful projects. I am
+                actively seeking internship opportunities, collaborative projects, and connections with developers to
+                expand my knowledge and grow in the field of web development.
+            </p> <!--  HINT : Content is added in this Tag  -->
+            <br>
+            <p><strong>[ Email ]: </strong><a href="krishna.ag2503@gmail.com">
+                    krishna.ag2503@gmail.com</p>
+            <p><strong>[ LinkedIn ]: </strong>
+                <a href="linkedin.com/in/krishna-agarwal-035945417" target="_blank">
+                    linkedIn.com/krishna-agarwal
+            </p>
+            <p><strong>[ GitHub ]: </strong>
+                <a href="https://github.com/Krishna-2503" target="_blank">
+                    github.com/Krishna
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+    <!-- PARTY POPUP -->
+    <div id="party-popup"> <!--  HINT : Sectioning tag for containers  -->
+        <h2>MISSION ACCOMPLISHED!</h2>
+        <p>You have unlocked the full portfolio.</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
