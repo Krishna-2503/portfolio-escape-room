@@ -18,14 +18,16 @@ Each door represents an important section of my portfolio:
 To unlock each archive, visitors solve simple web-development puzzles. After answering correctly, the next door becomes accessible until the entire portfolio is revealed.
 
 🛠️ Technologies Used
+
 HTML
+
 CSS
+
 JavaScript
 
 📂 Portfolio Sections
 
 1. About Me
- 
 Introduces me as a B.Tech student , sharing my learning journey, technical skills, and career goals.
 
 2. Projects
